@@ -1,0 +1,29 @@
+POST http://localhost:3000/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "zealous",
+  "lastName": "zohaib",
+  "email":"11ysg2s3@gmail.com",
+  "password":"Zealous@123",
+  "role":"user"
+}
+
+###
+
+POST http://localhost:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+      "email":"11ysg2s3@gmail.com",
+        "password":"Zealous@123"
+
+}
+###
+GET  http://localhost:3000/api/v1/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROYW1lIjoiemVhbG91cyIsImxhc3ROYW1lIjoiem9oYWliIiwiZW1haWwiOiIxMXlzZzJzM0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCREQU13eFFjQWo3Zlo4aHVtNkxIVnguUjluSk16emhZVGxMM0xVTS4wejVGMkxyRmlvM25IbSIsInJvbGUiOiJ1c2VyIiwiY3JlYXRlZEF0IjoiMjAyNC0wOS0yN1QxMzo1Nzo1OS44NTdaIiwidXBkYXRlZEF0IjoiMjAyNC0wOS0yN1QxMzo1Nzo1OS44NTdaIiwiaWF0IjoxNzI3NDU2NTk0LCJleHAiOjE3Mjc0NTY2MjR9.qbwVm1R3C1QEEqzer5MxO8WHyNiJxjKaU_UXYygNCJ8
+
+###
+GET  http://localhost:3000/api/v1/ping
+
