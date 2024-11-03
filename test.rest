@@ -2,21 +2,21 @@ POST http://localhost:3000/api/v1/auth/register
 Content-Type: application/json
 
 {
-  "firstName": "zealous",
-  "lastName": "zohaib",
-  "email":"11ysg2s3@gmail.com",
-  "password":"Zealous@123",
-  "role":"user"
+  "email": "johndoe@example.com",
+  "password": "secret"
 }
 
 ###
-
+### 
+POST http://localhost:3000/api/v1/auth/logout
+Content-Type: application/json
+### 
 POST http://localhost:3000/api/v1/auth/login
 Content-Type: application/json
 
 {
-      "email":"11ysg2s3@gmail.com",
-        "password":"Zealous@123"
+      "email":"johndoe@example.com",
+        "password":"secret"
 
 }
 ###
@@ -26,4 +26,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZmlyc3ROY
 
 ###
 GET  http://localhost:3000/api/v1/ping
+
+
+###
+GET  http://localhost:3000/api/v1/users/
+Content-Type: application/json
 
