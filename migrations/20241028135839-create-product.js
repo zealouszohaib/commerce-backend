@@ -1,52 +1,66 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
+"use strict";
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Products', {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable("Products", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       image: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       brand: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       category: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      price: {
-        type: Sequelize.DECIMAL
-      },
-      countInStock: {
-        type: Sequelize.INTEGER
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       rating: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.FLOAT,
+        allowNull: false,
+        defaultValue: 0,
       },
       numReviews: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
+      price: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+        defaultValue: 0,
+      },
+      countInStock: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Products');
-  }
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable("Products");
+  },
 };
